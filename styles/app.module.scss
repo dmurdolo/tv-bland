@@ -1,0 +1,24 @@
+.wrapper {
+    min-height: 100vh;
+    margin: 0 auto;
+
+    header {
+        background: #EBEBEB;
+        padding: 1rem 1.5rem;
+
+        h1 {
+            font-size: var(--font-size--large);
+            margin: 0;
+            padding: 1rem 0;
+        }
+    }    
+}
+    
+/** Tablet and up **/
+@media (min-width: 43em) {
+    .wrapper {
+        header {
+            padding: 1rem 5rem;
+        }
+    }
+}

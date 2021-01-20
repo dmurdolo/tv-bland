@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%; /* (62.5/100) * 16px = 10px */
+    --font-size--x-small: 1.2rem; /* 12px */
+    --font-size--small: 1.4rem; /* 14px */
+    --font-size--default: 1.6rem; /* 16px */
+    --font-size--large: 2.4rem; /* 24px */
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0 auto;
+  font-family: Arial, Arial, Helvetica, sans-serif;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
