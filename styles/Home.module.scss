@@ -1,16 +1,7 @@
 /** Mobile first styles **/
-header.homeHeader {
+.mainHeader {
   margin: 0 0 1rem 0;
-
-  p {
-    margin: 0 0 1rem;
-    font-size: var(--font-size--small);
-    color: #8B8B8B;
-
-    &:first-of-type {
-      margin: 0 0 1rem;
-    }
-  }
+  padding-bottom: 1rem;
 }
 
 .main {
@@ -34,11 +25,10 @@ header.homeHeader {
       width: 100%;
       min-height: 10rem;
       text-align: center;
+      cursor: pointer;
 
-      .rating {
+      div:nth-child(2) {
         display: none;
-        text-align: left;
-        margin: .5rem 0 0;
       }
 
       p {
@@ -50,31 +40,31 @@ header.homeHeader {
     }
   }
 }
-    
-/** Tablet and up **/
-@media (min-width: 43em) {
-  .homeHeader {
-    height: 580px;
-  
-    p {
-      margin: 1rem 0 0;
-      font-size: var(--font-size--default);
 
-      &:first-of-type {
-        margin: 3rem 0 0;
-      }
+
+@media (min-width: 32em) {  
+  .main {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
-  
+}
+    
+/** Tablet and up **/
+@media (min-width: 43em) {  
   .main {
     padding: 0 5rem;
     margin-top: -40rem;
 
     .grid {
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(5, 1fr);
 
       .show {
-        .rating {
+        p {
+          margin: 1rem 0 2rem;
+        }
+
+        div:nth-child(2) {
           display: block;
         }
       }

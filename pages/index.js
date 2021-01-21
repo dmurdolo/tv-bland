@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 
-import appStyles from '../styles/app.module.scss'
 import styles from '../styles/Home.module.scss'
+
+import Rating from './components/rating'
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -23,16 +23,16 @@ const Home = () => {
   }, [])
 
   return (
-    <div className={appStyles.wrapper}>
+    <div className="wrapper">
       <Head>
         <title>TV Bland - Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className={styles.homeHeader}>
-        <h1>
-          TV Bland
-        </h1>
+      <header className="mainHeader">
+        <a href="/">
+            <h1>TV Bland</h1>
+        </a>
         <p>TV Show and web series database.</p>
         <p>Create personalised schedules. Episode guide, cast, crew and character information.</p>
       </header>
@@ -44,11 +44,40 @@ const Home = () => {
           {
             !loading && schedule.length > 0 ? schedule.map(item => {
               return (
-                <Link key={item.id} href={`/show/${item.id}`}>
+                <Link key={item.id} href={{ pathname: '/show/[id]', query: { id: item.show.id }}} as={`/show/${item.show.id}`}>
                   <div className={styles.show}>
-                    {item.show.image ? <Image src={item.show.image.medium} height={295} width={210} layout="responsive" alt={item.name} /> : <Image src="/images/image-not-found.png" width={32} height={32} alt="Image not found" />}
-                    {item.show.rating.average ? <div className={styles.rating}>{item.show.rating.average}</div> : <div className={styles.rating}>No rating information</div>}
-                    <p>{item.name}</p>
+                    <style jsx>{`
+                      .show-image {
+                        display: block;
+                        margin: 0 0 1rem;
+                        width: 100%;
+                        min-height: 205px;
+                        background: url(${item.show.image && item.show.image.medium});
+                        background-position: center;
+                        background-size: cover;
+                      }
+
+                      @media (min-width: 32em) {
+                          .show-image {
+                              min-height: 400px;
+                          }
+                      }
+
+                      @media (min-width: 43em) {
+                          .show-image {
+                              min-height: 300px;
+                          }
+                      }
+
+                      @media (min-width: 87em) {
+                          .show-image {
+                              min-height: 500px;
+                          }
+                      }
+                    `}</style>
+                    {item.show.image && <div className="show-image"></div>}
+                    {item.show.rating && <Rating page="home" average={item.show.rating.average} />}
+                    <p>{item.show.name}</p>
                   </div>
                 </Link>
               )

@@ -7,7 +7,9 @@
     --font-size--x-small: 1.2rem; /* 12px */
     --font-size--small: 1.4rem; /* 14px */
     --font-size--default: 1.6rem; /* 16px */
+    --font-size--medium: 1.8rem; /* 18px */
     --font-size--large: 2.4rem; /* 24px */
+    --font-size--x-large: 2.8rem; /* 28px */
 }
 
 html,
@@ -19,5 +21,47 @@ body {
   a {
     color: inherit;
     text-decoration: none;
+  }
+}
+
+.wrapper {
+  min-height: 100vh;
+  margin: 0 auto;   
+
+  header.mainHeader {
+      background: #EBEBEB;
+      padding: 1rem 1.5rem 1rem;
+
+      h1 {
+          font-size: var(--font-size--large);
+          margin: 0;
+          padding: 1rem 0;
+      }
+
+      p {
+        margin: 0 0 1rem;
+        font-size: var(--font-size--small);
+        color: #8B8B8B;
+    
+        &:first-of-type {
+          margin: 0 0 1rem;
+        }
+      }
+  } 
+    
+  /** Tablet and up **/
+  @media (min-width: 43em) {
+    header.mainHeader {
+        padding: 1rem 5rem;
+        height: 45vh;
+
+        p {
+          font-size: var(--font-size--default);
+    
+          &:first-of-type {
+            margin: 2rem 0 0;
+          }
+        }
+    }
   }
 }
