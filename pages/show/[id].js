@@ -115,32 +115,34 @@ const Show = () => {
                 <div>
                     {cast && cast.length > 0 && <div className={styles.cast}>
                         <h2>Starring</h2>
-                        {cast.map(item => {
-                            return (
-                                <div className={styles.actor} key={item.person.id}>
-                                    <style jsx>{`
-                                        .cast-image {
-                                            display: inline-block;
-                                            margin: 0 0 1rem 0;
-                                            width: 45px;
-                                            height: 45px;
-                                            background: url(${item.person.image && item.person.image.medium});
-                                            background-position: center;
-                                            background-size: cover;
-                                            border-radius: 22px;
-                                        }
-                    
-                                        @media (min-width: 43em) {
-                                        }
-                                    `}</style>
-                                    <div className="cast-image"></div>
-                                    <div className={styles.name}>
-                                        <p>{item.person.name}</p>
-                                        <p>{item.character.name}</p>
+                        <div className={styles.list}>
+                            {cast.map(item => {
+                                return (
+                                    <div className={styles.actor} key={item.person.id}>
+                                        <style jsx>{`
+                                            .cast-image {
+                                                display: inline-block;
+                                                margin: 0 0 1rem 0;
+                                                width: 45px;
+                                                height: 45px;
+                                                background: #ccc url(${item.person.image && item.person.image.medium});
+                                                background-position: center;
+                                                background-size: cover;
+                                                border-radius: 22px;
+                                            }
+                        
+                                            @media (min-width: 43em) {
+                                            }
+                                        `}</style>
+                                        <div className="cast-image"></div>
+                                        <div className={styles.name}>
+                                            <p>{item.person.name}</p>
+                                            <p>{item.character.name}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            )
-                        })}
+                                )
+                            })}
+                        </div>
                     </div>}
                 </div>
             </div>

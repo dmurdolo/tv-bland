@@ -29,19 +29,21 @@ body {
   margin: 0 auto;   
 
   header.mainHeader {
-      background: #EBEBEB;
+      background: #00296B;
       padding: 1rem 1.5rem 1rem;
+      color: #fff;
 
       h1 {
           font-size: var(--font-size--large);
           margin: 0;
           padding: 1rem 0;
+          color: #fff;
       }
 
       p {
         margin: 0 0 1rem;
         font-size: var(--font-size--small);
-        color: #8B8B8B;
+        color: #fff;
     
         &:first-of-type {
           margin: 0 0 1rem;
@@ -55,12 +57,27 @@ body {
         padding: 1rem 5rem;
         height: 45vh;
 
+        a {
+            position: relative;
+            z-index: 999999;
+            display: block;
+        }
+
         p {
-          font-size: var(--font-size--default);
+          font-size: var(--font-size--large);
+          line-height: var(--font-size--x-large);
     
           &:first-of-type {
             margin: 2rem 0 0;
           }
+        }
+    }
+  }
+    
+  @media (min-width: 62em) {
+    header.mainHeader {
+        p {
+          width: 60%;
         }
     }
   }

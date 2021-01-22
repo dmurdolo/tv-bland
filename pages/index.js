@@ -52,8 +52,8 @@ const Home = () => {
                         margin: 0 0 1rem;
                         width: 100%;
                         min-height: 205px;
-                        background: url(${item.show.image && item.show.image.medium});
-                        background-position: center;
+                        background: #ccc url(${item.show.image && item.show.image.medium});
+                        background-position: top center;
                         background-size: cover;
                       }
 
@@ -66,6 +66,7 @@ const Home = () => {
                       @media (min-width: 43em) {
                           .show-image {
                               min-height: 300px;
+                              background-position: center;
                           }
                       }
 
@@ -75,7 +76,7 @@ const Home = () => {
                           }
                       }
                     `}</style>
-                    {item.show.image && <div className="show-image"></div>}
+                    <div className="show-image"></div>
                     {item.show.rating && <Rating page="home" average={item.show.rating.average} />}
                     <p>{item.show.name}</p>
                   </div>

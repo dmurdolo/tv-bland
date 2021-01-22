@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",    
+    "test": "cypress run"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
@@ -16,5 +17,8 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "sass": "^1.32.5"
+  },
+  "devDependencies": {
+    "cypress": "^6.3.0"
   }
 }
