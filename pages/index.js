@@ -31,7 +31,7 @@ const Home = () => {
 
       <header className="mainHeader">
         <a href="/">
-            <h1>TV Bland</h1>
+            <h1>TV<span>BLAND</span></h1>
         </a>
         <p>TV Show and web series database.</p>
         <p>Create personalised schedules. Episode guide, cast, crew and character information.</p>

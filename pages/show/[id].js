@@ -54,7 +54,7 @@ const Show = () => {
 
       <header className="mainHeader">
         <a href="/">
-            <h1>TV Bland</h1>
+            <h1>TV<span>BLAND</span></h1>
         </a>
       </header>
 
